@@ -1,0 +1,3 @@
+{"resource":"resource A","status":1,"userId":123456}
+{"resource":"resource B","status":1,"userId":123456}
+{"resource":"resource C","status":1,"userId":123456}

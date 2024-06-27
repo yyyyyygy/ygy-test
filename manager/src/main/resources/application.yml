@@ -1,0 +1,36 @@
+server:
+  port: 8080
+
+#spring:
+#  elasticsearch:
+#    uris: http://test-3y2.public.cn-hangzhou.es-serverless.aliyuncs.com:9200
+#    username: test-3y2
+#    password: Ygy123123
+#    connection-timeout: 1000
+#    socket-timeout: 1000
+
+spring:
+  mvc:
+    servlet:
+      load-on-startup: -1
+  application:
+    name: springboot-mybatis
+  # 配置数据源
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: 123456
+    type: com.alibaba.druid.pool.DruidDataSource
+
+mybatis:
+  # xml映射文件所在的路径，一般用模糊匹配来指定最终的xml文件
+  mapper-locations: classpath:/mapper/*.xml
+  configuration:
+    #采用驼峰形式将数据表中以‘_’分隔的字段映射到java类的某个属性,比如表字段user_name可以映射为类里面的userName属性
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+
+
+
